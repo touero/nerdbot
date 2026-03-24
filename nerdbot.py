@@ -4,10 +4,10 @@ import subprocess
 
 API_KEY = os.getenv("OPENROUTER_API_KEY")
 URL = "https://openrouter.ai/api/v1/chat/completions"
-MODEL = "openai/o3-mini"
+MODEL = "xiaomi/mimo-v2-omni"
 
 if not API_KEY:
-    raise ValueError("请先设置 OPENROUTER_API_KEY 环境变量")
+    raise ValueError("Please set OPENROUTER_API_KEY in .env file")
 
 headers = {
     "Authorization": f"Bearer {API_KEY}",
@@ -113,7 +113,7 @@ try:
                     })
 
                 else:
-                    print("⚠️ 格式错误，终止")
+                    print("⚠️ Format error terminated")
                     break
 
 except KeyboardInterrupt:
